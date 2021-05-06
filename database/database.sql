@@ -141,6 +141,16 @@ CREATE TABLE IF NOT EXISTS `vet`.`Servicios_Clientes` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+-- -----------------------------------------------------
+-- Table `vet`.`Soporte`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `vet`.`Soporte` (
+  `idSoporte` VARCHAR(4) NOT NULL,
+  `Correo` VARCHAR(40) NOT NULL,
+  `Mensaje_Soporte` VARCHAR(200) NOT NULL,
+  PRIMARY KEY (`idSoporte`))
+ENGINE = InnoDB;
+
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
