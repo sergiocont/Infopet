@@ -9,6 +9,8 @@ const cors_1 = __importDefault(require("cors"));
 const indexRoutes_1 = __importDefault(require("./routes/indexRoutes"));
 const vetRoutes_1 = __importDefault(require("./routes/vetRoutes"));
 const soporteRoutes_1 = __importDefault(require("./routes/soporteRoutes"));
+const vetServiciosRoutes_1 = __importDefault(require("./routes/vetServiciosRoutes"));
+const vetResultadosRoutes_1 = __importDefault(require("./routes/vetResultadosRoutes"));
 class Server {
     constructor() {
         this.app = express_1.default();
@@ -26,6 +28,8 @@ class Server {
         this.app.use('/', indexRoutes_1.default);
         this.app.use('/vet', vetRoutes_1.default);
         this.app.use('/soporte', soporteRoutes_1.default);
+        this.app.use('/vetServicios', vetServiciosRoutes_1.default);
+        this.app.use('/vetResultados', vetResultadosRoutes_1.default);
     }
     start() {
         this.app.listen(this.app.get('port'), () => {

@@ -5,6 +5,9 @@ import cors from 'cors';
 import indexRoutes from './routes/indexRoutes';
 import vetRoutes from './routes/vetRoutes';
 import soporteRoutes from './routes/soporteRoutes';
+import vetServiciosRoutes from './routes/vetServiciosRoutes';
+import vetResultadosRoutes from './routes/vetResultadosRoutes';
+
 
 class Server {
     public app: Application;
@@ -27,6 +30,9 @@ class Server {
         this.app.use('/',indexRoutes);
         this.app.use('/vet', vetRoutes);
         this.app.use('/soporte', soporteRoutes);
+        this.app.use('/vetServicios', vetServiciosRoutes);
+        this.app.use('/vetResultados', vetResultadosRoutes);
+        
 
     }
     start(): void {
