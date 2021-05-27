@@ -7,7 +7,7 @@ class VetResultadosController {
 
     public async list(req: Request, res: Response) {
         const { comuna } = req.params;
-        const servicios = await pool.query('SELECT clientes.Client_Nom AS Nombre, clientes.Client_a_Cargo AS "Tipo de cliente", clientes.Client_Titulo AS Disponibilidad FROM clientes WHERE clientes.Client_Comuna = ?', [comuna]);
+        const servicios = await pool.query('SELECT clientes.Client_Nom AS Nombre, clientes.Client_a_Cargo AS "Tipo_de_cliente", clientes.Client_Titulo AS Disponibilidad FROM clientes WHERE clientes.Client_Comuna = ?', [comuna]);
         res.json(servicios);
     }
     

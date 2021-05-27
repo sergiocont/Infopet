@@ -17,7 +17,7 @@ class VetResultadosController {
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { comuna } = req.params;
-            const servicios = yield database_1.default.query('SELECT clientes.Client_Nom AS Nombre, clientes.Client_a_Cargo AS "Tipo de cliente", clientes.Client_Titulo AS Disponibilidad FROM clientes WHERE clientes.Client_Comuna = ?', [comuna]);
+            const servicios = yield database_1.default.query('SELECT clientes.Client_Nom AS Nombre, clientes.Client_a_Cargo AS "Tipo_de_cliente", clientes.Client_Titulo AS Disponibilidad FROM clientes WHERE clientes.Client_Comuna = ?', [comuna]);
             res.json(servicios);
         });
     }
